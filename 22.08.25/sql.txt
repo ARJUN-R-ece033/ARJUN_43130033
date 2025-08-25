@@ -1,0 +1,11 @@
+show databases;
+create database workez;
+use workez;
+start transaction;
+create table company(eid int,ename varchar(20),esalary int,eage int);
+insert into company values('1','Dayalan','90000','19'),('2','Simon','80000','20'),('3','Xavier','90000','19'),('4','Dahaa','80000','20');
+select * from  company;
+savepoint friday;
+delete from company where eid=1;
+rollback to friday;
+select * from company;
